@@ -1,0 +1,17 @@
+{% extends 'templatepage.html' %}
+{% load render_table from django_tables2 %}
+{% load static %}
+
+{%block title %}
+<link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+{% endblock %}
+
+{%block content %}
+    <h1>Заказы</h1>
+    {% for order in orders %}
+        {% for one in order.product.all %}
+            <p>{{ one }}</p>
+        {% endfor %}
+        <p>{{ order.customer }}</p>
+    {% endfor %}
+{% endblock %}

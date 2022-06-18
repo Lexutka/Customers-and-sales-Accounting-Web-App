@@ -1,0 +1,19 @@
+{% extends 'templatepage.html' %}
+{% load static %}
+{%block title %}
+Главная страница
+{% endblock %}
+
+{%block content %}
+    <h1>Добрый день, Татьяна!</h1>
+    <h3>На неделе:</h3>
+    <h3>Др</h3>
+    <h3>Давно не заказывали</h3>
+    <h3>Просили звязаться</h3>
+    <div class="home-pg">
+    <button onclick="window.location.href = 'newby'">Новый клиент</button>
+    <button onclick="window.location.href = 'new_order'">Новый заказ</button>
+    <button onclick="window.location.href = 'new_product'">Новый продукт</button>
+    <button onclick="window.location.href = 'new_spending'">Новые расходы</button>
+    </div>
+{% endblock %}

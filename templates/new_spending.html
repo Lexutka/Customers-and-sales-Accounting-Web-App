@@ -1,0 +1,19 @@
+{% extends 'templatepage.html' %}
+
+{%block title %}
+Новые расходы
+{% endblock %}
+
+{%block content %}
+    <h1>Новые расходы</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Оформление заказов (руб.)<br>{{ form.order_making_spendings }}</p>
+        <p>Транспорт (руб.)<br>{{ form.gasoline_spendings }}</p>
+        <p>Доставка продукции (руб.)<br>{{ form.delivery_spendings }}</p>
+        <p>Другое (руб.)<br>{{ form.other_spendings }}</p>
+        <button type="submit" class="btn btn-success">Добавить расходы</button>
+        <span>{{ error }}</span>
+        <p hidden>{{ form.product_spendings }}{{ form.income }}</p>
+    </form><br>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'templatepage.html' %}
+{% load static %}
+{%block title %}
+Список клиентов
+{% endblock %}
+
+{%block content %}
+    <div class="client-list">
+    <h1>Клиенты</h1>
+    <table class="sortable">
+        <th>ФИО</th>
+        <th>День рождения</th>
+        <th>Профессия</th>
+        <th>Кол-во заказов</th>
+        <th>Общая сумма заказов (руб.)</th>
+        <th>Задолженность (руб.)</th>
+        {% for client in clients %}
+            <tr class="point-row">
+                <td class="name"><a href="/clients/{{ client.pk }}">{{ client.name }}</a></td>
+                <td>{{ client.birthday }}</td>
+                <td>{{ client.occupation }}</td>
+                <td>{{ client.sales_number }}</td>
+                <td>{{ client.sales_value }}</td>
+                <td>{{ client.debt }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="empty-td" colspan="6">Клиентов пока нет</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

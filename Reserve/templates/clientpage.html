@@ -1,0 +1,22 @@
+{% extends 'templatepage.html' %}
+
+{%block title %}
+Главная страница
+{% endblock %}
+
+{%block content %}
+    <h1>{{ clients }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Полное имя {{ form.name }}{{ form.id_link }}</p>
+        <p>День рождения{{ form.birthday }}</p>
+        <p>Профессия {{ form.occupation }}</p>
+        <p>Кол-во продаж {{ form.sales_number }}</p>
+        <p>Сумма продаж{{ form.sales_value }}</p>
+        <p>Задолженность {{ form.debt }}</p>
+        <p>Заметки{{ form.notes }}</p>
+        <button type="submit" class="btn btn-success">Обновить информацию о клиенте</button>
+        <span>{{ error }}</span>
+    </form><br>
+    <p><button onclick="window.location.href = 'clients'">Сюда же</button></p>
+{% endblock %}

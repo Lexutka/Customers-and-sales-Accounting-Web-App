@@ -1,0 +1,54 @@
+{% extends 'templatepage.html' %}
+
+{%block title %}
+Новый заказ
+{%endblock%}
+
+{%block content%}
+<h1>Ура! Новый заказ</h1>
+<form id="order" method="POST" xmlns="http://www.w3.org/1999/html" action="">
+    {% csrf_token %}
+    <p>Покупатель</p>
+    <p>{{ form.customer }}</p>
+    <p>Сумма отложенного платежа </p>
+    <p>{{ form.credit }}</p>
+    <h3>Товары на складе</h3>
+    <p>Уход за кожей TimeWise® Age Minimize 3D</p>
+    <p>{{ form.product1 }}</p>
+    <p>Уход за кожей TimeWise Repair</p>
+    <p>{{ form.product2 }}</p>
+    <p>Уход за кожей Botanical Effects</p>
+    <p>{{ form.product3 }}</p>
+    <p>Уход за кожей Clear Proof</p>
+    <p>{{ form.product4 }}</p>
+    <p>Уход за кожей Naturally</p>
+    <p>{{ form.product5 }}</p>
+    <p>Коллекция MKMEN</p>
+    <p>{{ form.product6 }}</p>
+    <p>Дополнительные средства</p>
+    <p>{{ form.product7 }}</p>
+    <p>Аксессуары / Компактные футляры</p>
+    <p>{{ form.product8 }}</p>
+    <p>Косметические кисти</p>
+    <p>{{ form.product9 }}</p>
+    <p>Идеальный тон</p>
+    <p>{{ form.product10 }}</p>
+    <p>Румяна / Контуринг</p>
+    <p>{{ form.product11 }}</p>
+    <p>Брови</p>
+    <p>{{ form.product12 }}</p>
+    <p>Глаза</p>
+    <p>{{ form.product13 }}</p>
+    <p>Губы</p>
+    <p>{{ form.product14 }}</p>
+    <p>Тело</p>
+    <p>{{ form.product15 }}</p>
+    <p>Парфюм</p>
+    <p>{{ form.product16 }}</p>
+    <p>Секция 2</p>
+    <p>{{ form.product17 }}</p>
+    <p>Бонусы / подарки</p>
+    <p>{{ form.product18 }}</p>
+    <button type="submit" class="btn btn-success">Подтвердить заказ</button>
+</form>
+{%endblock%}

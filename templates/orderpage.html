@@ -1,0 +1,161 @@
+{% extends 'templatepage.html' %}
+
+{%block title %}
+Страница клиента
+{% endblock %}
+
+{%block content %}
+    <h1>Заказ от {{ order.customer }} от {{order.date }}</h1>
+    <h2>Состав заказа</h2>
+    <table class="sortable order">
+        <th>Наименование</th>
+        <th>Категория</th>
+        <th>Срок годности</th>
+        <th>Цена (руб.)</th>
+        {% for product in order.product1.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product2.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product3.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product4.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product5.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product6.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product7.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product8.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product9.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product10.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product11.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product12.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product13.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product14.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product15.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product16.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product17.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+        {% for product in order.product18.all %}
+            <tr>
+                <td class="name">{{ product.name }}</td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+<p>Сумма отложенного платежа: {{ order.credit }} руб.</p>
+{% endblock %}

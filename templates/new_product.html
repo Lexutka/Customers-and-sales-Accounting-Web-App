@@ -1,0 +1,18 @@
+{% extends 'templatepage.html' %}
+
+{%block title %}
+Новый продукт
+{% endblock %}
+
+{%block content %}
+    <h1>Новый продукт в базу</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Наименование<br>{{ form.name }}{{ form.id_link }}</p>
+        <p>Категория<br>{{ form.product_type }}</p>
+        <p>Розничная цена(руб.)<br>{{ form.price }}</p>
+        <p>Срок годности<br>{{ form.exp_date }}</p>
+        <button type="submit" class="btn btn-success">Добавить продукт в базу</button>
+        <span>{{ error }}</span>
+    </form><br>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'templatepage.html' %}
+
+{%block title %}
+Страница продукта
+{% endblock %}
+
+{%block content %}
+    <h1>{{ clients }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Наименование<br>{{ form.name }}{{ form.id_link }}</p>
+        <p>Категория<br>{{ form.product_type }}</p>
+        <p>Цена<br>{{ form.price }}</p>
+        <p>Годен до<br>{{ form.exp_date }}</p>
+        <button type="submit" class="btn btn-success">Обновить информацию о товаре</button>
+        <span>{{ error }}</span>
+        <br>
+        <br>
+        <a href="delete/{{ post.pk }}" class="delete-btn">Удалить из базы</a>
+    </form>
+
+{% endblock %}

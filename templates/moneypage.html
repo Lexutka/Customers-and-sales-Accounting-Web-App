@@ -1,0 +1,44 @@
+{% extends 'templatepage.html' %}
+{% load render_table from django_tables2 %}
+{% load static %}
+
+{%block title %}
+Бухгалтерия
+{% endblock %}
+
+{%block content %}
+    <h1>Состояние финансов</h1>
+<div class="client-list money-page">
+    <table class="sortable">
+        <th>Дата</th>
+        <th>-(продукция)</th>
+        <th>-(доставка)</th>
+        <th>-(оформление)</th>
+        <th>-(транспорт)</th>
+        <th>-(прочее)</th>
+        <th>+(продажи)</th>
+        {% for flow in flows %}
+            <tr class="point-row">
+                <td><a href="/clients/{{ client.pk }}"  class="name">{{ flow.date }}</a></td>
+                <td>{{ flow.product_spendings }}</td>
+                <td>{{ flow.delivery_spendings }}</td>
+                <td>{{ flow.order_making_spendings }}</td>
+                <td>{{ flow.gasoline_spendings }}</td>
+                <td>{{ flow.other_spendings }}</td>
+                <td>{{ flow.income }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="empty-td" colspan="7">Ещё не зафиксировано ни одной денежной операции</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <div class="money-total-data">
+        <p>{{ spendings }}</p>
+        <p>Доходы всего: {{ income }} р.</p>
+        <p>Расходы всего: {{ minus }} р.</p>
+        <p>Прибыль: {{ profit }} р.</p>
+    </div>
+</div>
+{% endblock %}

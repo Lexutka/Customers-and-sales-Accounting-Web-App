@@ -1,0 +1,23 @@
+{% extends 'templatepage.html' %}
+
+{% block title %}
+Новый клиент
+{% endblock %}
+
+{% block content %}
+    <h1>Ура! Новый клиент</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Полное имя<br>{{ form.name }}</p>
+        <p>День рождения<br>{{ form.birthday }}</p>
+        <p>Номер телефона<br>{{ form.phone_number }}</p>
+        <p>Профессия<br>{{ form.occupation }}</p>
+        <p>Домашний адрес<br>{{ form.address }}</p>
+        <p>Кол-во продаж<br>{{ form.sales_number }}</p>
+        <p>Сумма продаж (руб.)<br>{{ form.sales_value }}</p>
+        <p>Задолженность (руб.)<br>{{ form.debt }}</p>
+        <p>Заметки<br>{{ form.notes }}</p>
+        <button type="submit" class="btn btn-success">Добавить в клиентскую базу</button>
+        <span>{{ error }}</span>
+    </form><br>
+{% endblock %}

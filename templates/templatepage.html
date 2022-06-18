@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css'%}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Lato:ital,wght@1,300&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'django_tables2/themes/paleblue/css/screen.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Ruda&display=swap" rel="stylesheet">
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <script type="text/javascript" src={% static "js/jquery-3.6.0.js" %}></script>
+    <script type="text/javascript" src={% static "js/main.js" %}></script>
+    <title>{% block title %}{% endblock %}</title>
+<style>
+    .extremum-slide {
+	border:1px solid;
+	padding:50px;
+}
+</style>
+</head>
+<body>
+    <div class="nav-bar">
+    <nav>
+        <a id="menu-btn" href="{% url 'home' %}">MKclient</a>
+        <a href="{% url 'clients' %}">Клиенты</a>
+        <a href="{% url 'products' %}">Склад</a>
+        <a href="{% url 'orders' %}">Заказы</a>
+        <a href="{% url 'moneypage' %}">Бухгалтерия</a>
+        <a href = '/admin'>Администрирование</a>
+    </nav>
+    </div>
+    <p id="current-time">{% now "l, j F" %}</p>
+    {% block content %}{% endblock %}
+</body>
+</html>

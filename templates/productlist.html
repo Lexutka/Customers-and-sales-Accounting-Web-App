@@ -1,0 +1,29 @@
+{% extends 'templatepage.html' %}
+{% load render_table from django_tables2 %}
+{% load static %}
+
+{%block title %}
+Список продуктов
+{% endblock %}
+
+{%block content %}
+    <h1>Продукция</h1>
+    <table class="sortable">
+        <th>Наименование</th>
+        <th>Категория</th>
+        <th>Срок годности</th>
+        <th>Цена (руб.)</th>
+        {% for product in products %}
+            <tr class="point-row">
+                <td class="name"><a href="/products/{{ product.pk }}">{{ product.name }}</a></td>
+                <td>{{ product.type_string }}</td>
+                <td>{{ product.exp_date }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="empty-td" colspan="4">Склад пуст</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'templatepage.html' %}
+{% load render_table from django_tables2 %}
+{% load static %}
+{%block title %}
+Список заказов
+{% endblock %}
+
+{%block content %}
+    <h1>Заказы</h1>
+    <table class="sortable">
+        <th>Дата</th>
+        <th>Клиент</th>
+        <th>Сумма  (руб.)</th>
+        <th>Отл. платеж (руб.)</th>
+        {% for order in orders %}
+            <tr class="point-row">
+                <td class="name"><a href="/orders/{{ order.pk }}">{{ order.date }}</a></td>
+                <td>{{ order.customer }}</td>
+                <td>{{ order.sum }}</td>
+                <td>{{ order.credit }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td class="empty-td" colspan="3">Заказов пока нет</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

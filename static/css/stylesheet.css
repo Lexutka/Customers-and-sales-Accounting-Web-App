@@ -1,0 +1,214 @@
+* {
+    font-family: 'Ruda', sans-serif;
+    text-decoration: none; 
+    margin: 0;
+    padding: 0;
+}
+
+#current-time {
+    font-size: 20px;
+    display: block;
+    position: fixed;
+    top: 0px;
+    background-color: lightblue;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.empty-td {
+    text-align: center;
+}
+
+body {
+    background-color: peachpuff;
+    border-width: 3px;
+    text-align: center;
+}
+
+[href]:link {
+    color: initial;
+}
+
+
+[href]:visited {
+    color: initial;
+}
+
+nav {
+    background-color: lightpink;
+    padding: 15px 30px;
+    font-size: 25px;
+}
+
+nav a {
+    margin-right: 15px;
+}
+
+nav a:hover {
+    border-bottom: black 3px solid;
+}
+
+.point-row:hover {
+    background-color: lightpink;
+}
+
+#menu-btn {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+#menu-btn:hover {
+    border-bottom: black 3px solid;
+}
+
+.btn:hover {
+    background-color: lightpink;
+}
+
+button {
+    border: none;
+    padding: 0.8%;
+    border-radius: 10px;
+}
+
+.home-pg {
+    margin: 15px 25px;
+}
+
+.home-pg button {
+    margin: 15px 20px;
+    font-size: 23px;
+    background-color: #99DBC4;
+}
+
+.home-pg button:hover {
+    background-color: lightpink;
+}
+
+
+h1 {
+    margin: 20px;
+}
+
+h2 {
+    margin: 15px;
+}
+
+
+table {
+        margin: 0px;
+        display: inline-block;
+        border-collapse: collapse;
+}
+
+td {
+  text-align: right;  
+}
+
+
+
+table.sortable.order {
+    display: block-flex;
+    margin: 15px;
+    text-align: right;
+}
+
+th {
+    background-color: lightpink;
+    border-width: 3px;
+    padding: 6px 6px;
+    font-size: 20px;
+    font-family: 'Play', sans-serif;
+}
+
+.table-numbers {
+    font-family: sans-serif;
+}
+
+.name {
+    font-weight: bold;
+    margin: 0px 20px;
+    text-align: left;
+}
+
+tr:nth-child(1n) {
+    background-color: #B7EDDA;
+}
+
+tr:nth-child(2n) {
+    background-color: #D6F8C0;
+}
+
+td {
+    margin: 3px 10px;
+    padding: 3px 6px;
+}
+
+form {
+    text-align: left;
+    margin: 0% 20%;
+}
+
+form p {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+form button {
+    background-color: #99DBC4;
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.slide p,
+.slide [type="radio"] {
+    display:none;
+}
+
+.slide [type="radio"]:checked ~ p {
+    display:block;
+}
+
+.extremum-slide {display:none;}
+
+.money-total-data {
+    display: inline-block;
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.money-page {
+    margin: 0px 15%;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    max-width: auto;
+    width: 300px;
+}
+
+form p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.notes {
+    height: 200px;
+    width: 500px;
+    overflow: auto;
+}
+
+.delete-btn {
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightpink;
+}
